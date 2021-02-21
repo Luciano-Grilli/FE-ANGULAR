@@ -27,8 +27,13 @@ export class AlumnosFormComponent extends CommonFormComponent<Alumno, AlumnoServ
   }
 
   public seleccionarFoto(event): void{
-    this.fotoSeleccionada = event.tarjet.files[0];
+    this.fotoSeleccionada = event.target.files[0];
     console.info(this.fotoSeleccionada);
+
+    if (this.fotoSeleccionada.type.indexOf('image') < 0) {
+      this.fotoSeleccionada=null;
+      Swal.fire('Error', 'El archivo deber del tipo imagen', 'error');
+    }
   }
 
 
