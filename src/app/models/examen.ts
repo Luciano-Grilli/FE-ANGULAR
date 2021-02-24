@@ -6,7 +6,8 @@ export class Examen implements Base{
     id: number;
     nombre: string;
     preguntas: Pregunta[]=[];
-    asignatura: Asignatura;
+    asignaturaPadre: Asignatura;
+    asignaturaHija: Asignatura;
     respondido: boolean;
     createAt: string;
 }

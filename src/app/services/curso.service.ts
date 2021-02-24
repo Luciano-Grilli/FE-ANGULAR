@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { BASE_ENDPOINT } from '../config/app';
 import { Curso } from '../models/curso';
 import { CommonService } from './common.service';
 
@@ -7,5 +9,9 @@ import { CommonService } from './common.service';
 })
 export class CursoService extends CommonService<Curso>{
 
-  protected baseEndPoint = 'http://localhost:8090/api/alumnos';
+  constructor(http: HttpClient) {
+    super(http);
+   }
+
+  protected baseEndPoint = BASE_ENDPOINT + '/cursos';
 }

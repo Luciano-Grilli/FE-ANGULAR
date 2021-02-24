@@ -22,7 +22,10 @@ export abstract class CommonFormComponent<E extends Base, S extends CommonServic
     this.route.paramMap.subscribe(params => {
       const id: number = +params.get('id');
       if (id) {
-        this.service.ver(id).subscribe(model => this.model = model);
+        this.service.ver(id).subscribe(model => {
+          this.model = model
+          this.titulo = 'Editar ' + this.nombreModel;
+        });
       }
     })
   }
