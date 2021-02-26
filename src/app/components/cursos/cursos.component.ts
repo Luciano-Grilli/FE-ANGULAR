@@ -16,6 +16,8 @@ export class CursosComponent extends CommonListarComponent<Curso,CursoService> i
     this.nombreModel = Curso.name;
    }
 
+   
+
   
 
 }

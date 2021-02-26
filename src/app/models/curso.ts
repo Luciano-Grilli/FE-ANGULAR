@@ -8,4 +8,7 @@ export class Curso implements Base{
     createAt: string;
     alumno: Alumno[]=[];
     examenes: Examen[]=[];
+
 }
+
+
