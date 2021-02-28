@@ -7,6 +7,7 @@ import { CursosComponent } from './components/cursos/cursos.component';
 import { ExamenFormComponent } from './components/examenes/examen-form.component';
 import { ExamenesComponent } from './components/examenes/examenes.component';
 import { AsignarAlumnosComponent } from './components/cursos/asignar-alumnos.component';
+import { AsignarExamenesComponent } from './components/cursos/asignar-examenes.component';
 
 
 
@@ -16,6 +17,7 @@ const routes: Routes = [
     { path: 'cursos/form', component: CursoFormComponent },
     { path: 'cursos/form/:id', component: CursoFormComponent },
     { path: 'cursos/asignar-alumnos/:id', component: AsignarAlumnosComponent },
+    { path: 'cursos/asignar-examenes/:id', component: AsignarExamenesComponent },
     { path: 'examenes', component: ExamenesComponent },
     { path: 'examenes/form', component: ExamenFormComponent },
     { path: 'examenes/form/:id', component: ExamenFormComponent },

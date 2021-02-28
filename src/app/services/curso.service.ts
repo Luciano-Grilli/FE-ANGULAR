@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { BASE_ENDPOINT } from '../config/app';
 import { Alumno } from '../models/alumno';
 import { Curso } from '../models/curso';
+import { Examen } from '../models/examen';
 import { CommonService } from './common.service';
 
 @Injectable({
@@ -29,4 +30,13 @@ export class CursoService extends CommonService<Curso>{
     alumno,{headers: this.cabeceras});
   }
 
+  asignarExamenes(curso: Curso, examenes: Examen[]): Observable<Curso>{
+    return this.http.put<Curso>(`${this.baseEndPoint}/${curso.id}/asignar-examenes`,
+    examenes,{headers: this.cabeceras}); 
+  }
+
+  eliminarExamen(curso: Curso, examen: Examen): Observable<Curso>{
+    return this.http.put<Curso>(`${this.baseEndPoint}/${curso.id}/eliminar-examen`,
+    examen,{headers: this.cabeceras}); 
+  }
 }
